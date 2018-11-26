@@ -77,5 +77,7 @@ money_game = {'one': -50, 'two': -50, 'three': 10, 'four': 20, 'five': 40, 'six'
 
 
 
+
+#ASK QUESTIONS ABOUT YOUR SAMPLE SPACE THROUGH RANDOM VARIABLES!
 print(probability(dice, is_even, '==', 1))
 print(expected_value(dice, money_game))
