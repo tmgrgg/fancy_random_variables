@@ -14,8 +14,8 @@ Created on Mon Nov 26 13:48:47 2018
 
 import numpy as np
 
-def is_distribution(experiment):
-    epsilon = 1/100
+def assert_distribution(experiment):
+    epsilon = 1/100000000
     sum = 0
     for p in experiment['probs'].tolist():
         sum += p
@@ -36,7 +36,7 @@ def update_distribution_params(experiment, elements, values):
     for element in elements:
         i = experiment['elements'].tolist().index(element)
         experiment['probs'][i] = values[i]
-        
+    assert_distribution(experiment)
     print(experiment, '\n updated!')
 
 def to_distribution(experiment):
@@ -78,7 +78,7 @@ dice = {'elements': np.array(['one', 'two', 'three', 'four', 'five', 'six'], dty
           'probs': np.array([1/6, 1/6, 1/6, 1/6, 1/6, 1/6])}
 
 #ENSURE probs is a valid probability distribution!
-is_distribution(dice)
+assert_distribution(dice)
     
     
 #DEFINE RANDOM VARIABLES FOR ARBITRARY QUESTIONS/PROPERTIES ABOUT/ON SAMPLE SPACE
